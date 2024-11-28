@@ -1,0 +1,22 @@
+CREATE TABLE products (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL,
+    create_at DATETIME NULL,
+    update_at DATETIME NULL,
+    status BOOLEAN NOT NULL
+);
+
+CREATE TABLE branches (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    branche_name VARCHAR(255) NOT NULL,
+    create_at DATETIME NULL,
+    update_at DATETIME NULL,
+    status BOOLEAN NOT NULL
+);
+
+TABLE branche_product (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    branche_id INT NOT NULL,
+    product_id  INT NOT NULL
+);

@@ -1,30 +1,27 @@
 package co.com.amrsoftware.msvc_franquicias.domain.model.branche;
 
-
 import co.com.amrsoftware.msvc_franquicias.domain.model.product.Product;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @Builder(toBuilder = true)
 @Data
-public class Branche {
-    private Long id;
+public class BrancheAdd {
     @NotBlank
     private String brancheName;
-    private LocalDateTime createAt;
-    private LocalDateTime updateAt;
-    private boolean status;
+    @Valid
+    @NotEmpty
     private List<Product> products;
 
-    public Branche() {
+    public BrancheAdd() {
         products = new ArrayList<>();
     }
-
 }
